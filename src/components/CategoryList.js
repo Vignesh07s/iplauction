@@ -7,7 +7,7 @@ export default function MarqueePlayer(props) {
   // Initialize players data with base price (in crores) and status (default "Available")
   const [playersData, setPlayersData] = useState([]);
 
-  const teams = ["Mumbai Indians", "Chennai Super Kings", "Delhi Capitals", "Kolkata Knight Riders", "Royal Challengers Bangalore", "Rajasthan Royals", "Sunrisers Hyderabad"];
+  const teams = ["Mumbai Indians", "Chennai Super Kings", "Lucknow super giants", "Kolkata Knight Riders", "Royal Challengers Bangalore", "Rajasthan Royals", "Sunrisers Hyderabad", "Punjab Kings", "Gujarat titans", "Delhi Capitals"];
 
 
   // Reset playersData when basePrices prop changes
