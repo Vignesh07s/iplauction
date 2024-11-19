@@ -1,0 +1,365 @@
+/* MarqueePlayer Component */
+.marquee-container {
+    width: 100%;
+    max-width: 900px; /* Max width for the container */
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #343a40;
+  }
+  
+  /* Sidebar Styling */
+.auction-sidebar {
+  position: fixed; /* Fixed position to keep it in place */
+  top: 100px; /* You can adjust this value as per your design */
+  right: 20px;
+  background-color: #212529;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 200px;
+  z-index: 22; /* Ensure it's above other content */
+}
+
+  
+  .sidebar-item {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .sidebar-item strong {
+    font-weight: bold;
+  }
+  
+  /* Table Styling */
+  .table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+  }
+  
+  .table-header {
+    display: flex;
+    width: 100%;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #343a40; /* Dark background for the header */
+    color: #ffffff; /* White text for better visibility */
+  }
+  
+  .table-column {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 120px; /* Ensure all columns have same width */
+  }
+
+  .table-column.name{
+    font-size: 1.4rem;
+    text-align: justify;
+  }
+  
+  .players-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .player-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+  }
+  
+  .player-item .table-column {
+    flex: 1;
+    border: none;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  input[type="checkbox"] {
+    margin: 0;
+  }
+  
+  .bid-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .increment-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    margin-left: 10px;
+  }
+  
+  .increment-button:hover {
+    background-color: #45a049;
+  }
+
+  .main-content {
+    margin-right: 220px; /* Adjust depending on your sidebar width */
+  }
+  
+  
+  /* Status Styling */
+  .status {
+    font-weight: bold;
+    padding: 7px;
+    border-radius: 15px;
+    display: inline-block;
+    width: 120px; /* Fixed width for status column */
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; /* To handle long text gracefully */
+    cursor: pointer;
+  }
+  
+  .status.available {
+    background-color: #ffc107; /* Yellow for Available */
+    color: black;
+  }
+  
+  .status.inprogress {
+    background-color: #5d5b56; /* Dark gray for InProgress */
+    color: black;
+  }
+  
+  .status.sold {
+    background-color: #28a745; /* Green for Sold */
+    color: white;
+    cursor: not-allowed;
+  }
+  
+  .status.unsold {
+    background-color: #dc3545; /* Red for Unsold */
+    color: white;
+  }
+  
+  /* Switch Style */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 50px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    border-radius: 50px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #4CAF50;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(14px);
+  }
+  
+  /* Sidebar Button Styling */
+  button {
+    background-color: #007bff;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 5px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  button:disabled:hover {
+    background-color: #ccc;
+  }
+  
+  /* Miscellaneous Styling */
+  .table-container {
+    margin-top: 30px;
+  }
+  
+  .player-item input {
+    width: 80%; /* Make input fields smaller */
+  }
+  
+  .player-item button {
+    margin-left: 10px; /* Space between buttons */
+  }
+
+
+/* Style for the options container */
+.options {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+  align-items: center;
+  justify-content: center; /* Center the buttons horizontally */
+  margin-top: 10px;
+}
+
+/* Style for each button */
+.option {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  border: 2px solid #ddd; /* Light border for contrast */
+  border-radius: 20px;
+  background-color: #fff; /* White background */
+  color: #333; /* Dark text color */
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* Hover effect for buttons */
+.option:hover {
+  background-color: #007bff; /* Blue background on hover */
+  color: white; /* White text color on hover */
+  border-color: #007bff; /* Match the border color with the background */
+}
+
+/* Sold button */
+.option.sold {
+  background-color: #28a745; /* Green for Sold */
+  color: white;
+  border-color: #28a745;
+}
+
+/* Unsold button */
+.option.unsold {
+  background-color: #dc3545; /* Red for Unsold */
+  color: white;
+  border-color: #dc3545;
+}
+
+/* Hover effect specific to Sold/Unsold */
+.option.sold:hover {
+  background-color: #218838; /* Darker green on hover */
+  border-color: #218838;
+}
+
+.option.unsold:hover {
+  background-color: #c82333; /* Darker red on hover */
+  border-color: #c82333;
+}
+
+
+
+/* Dark Mode Dropdown Styling */
+.team-dropdown {
+  width: 200px;
+  padding: 12px 16px;
+  font-size: 16px;
+  border-radius: 19px;
+  border: none;
+  background-color: #2a2a2a; /* Slightly lighter than the current background */
+  color: #ddd;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Increase shadow for better contrast */
+
+  /* Optional: Add a subtle gradient for a more dynamic look */
+  background-image: linear-gradient(to bottom, #2a2a2a 0%, #262626 100%);
+}
+
+.team-dropdown:focus {
+  background-color: #333;
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 0 2px #4CAF50; /* Green focus outline */
+}
+
+.team-dropdown option {
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #ddd;
+  background-color: #2a2a2a; /* Match dropdown options with the dropdown background */
+}
+
+/* Custom dropdown arrow styling */
+.team-dropdown::-ms-expand {
+  display: none;
+}
+
+.team-dropdown {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('arrow.svg');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 30px;
+  color: whitesmoke;
+}
+
+.team-dropdown:hover {
+  background-color: #333;
+}
+
+/* Option Hover Effects */
+.team-dropdown option:hover {
+  background-color: #444; /* Darker option background when hovered */
+}

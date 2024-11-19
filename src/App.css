@@ -1,0 +1,95 @@
+/* body {
+    background-image: url('ipl.jpeg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    backdrop-filter: blur(15px);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    color: white;
+} */
+
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    color: white;
+
+    background-image: url('ipl.jpeg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* backdrop-filter: blur(15px); */
+}
+
+.blurred-container {
+    backdrop-filter: blur(15px);  /* Apply blur effect only to this container */
+  }
+  
+
+body,
+html {
+    overflow: auto;
+    /* Ensure it's not set to hidden or scroll */
+}
+
+
+
+/* Styling for the main heading (IPL Auction) */
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    /* Make it bold */
+    color: white;
+    /* Set text color to white */
+    margin-bottom: 20px;
+}
+
+/* Styling for the marquee heading */
+h2 {
+    font-size: 2rem;
+    /* Adjust font size */
+    font-weight: bold;
+    /* Make it bold */
+    color: white;
+    /* Set text color to white */
+    margin-bottom: 20px;
+}
+
+/* Center the button-container */
+.button-container {
+    display: flex;
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    height: 100px;
+    /* You can adjust this height as per your design */
+    margin-top: 20px;
+    /* Adjust margin if needed */
+}
+
+/* Style for the button itself */
+.next-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #28a745;
+    /* Green background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.next-btn:hover {
+    background-color: #218838;
+    /* Darker green on hover */
+}
